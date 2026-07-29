@@ -22,8 +22,7 @@
 
 
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "prepare": "pnpm build"
+    "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "dependencies": {
     "jiti": "^2.7.0",
