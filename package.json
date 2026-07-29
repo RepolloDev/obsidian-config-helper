@@ -1,0 +1,37 @@
+{
+  "name": "obsidian-config-helper",
+  "version": "1.0.0",
+  "description": "Utilidad de validación Zod y generación automática de manifest.json/versions.json para plugins de Obsidian",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "obsidian-manifests": "./bin/cli.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+
+
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepare": "pnpm build"
+  },
+  "dependencies": {
+    "jiti": "^2.7.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
